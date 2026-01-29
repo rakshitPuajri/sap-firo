@@ -1,0 +1,132 @@
+
+{
+  "_version": "1.28.0",
+  "sap.app": {
+    "id": "NorthWindApp.product",
+    "type": "application",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "dataSources": {
+      "northbreeze": {
+        "uri": "/odata/v4/northbreeze/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "4.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "Products-display": {
+          "signature": {
+            "parameters": {
+              "Products.ID": {
+                "renameTo": "ID"
+              }
+            },
+            "additionalParameters": "ignored"
+          },
+          "semanticObject": "Products",
+          "action": "display",
+          "title": "{{appTitle}}",
+          "info": "{{appDescription}}",
+          "subTitle": "{{appSubTitle}}",
+          "indicatorDataSource": {
+            "dataSource": "northbreeze",
+            "path": "Products/$count",
+            "refresh": 1800
+          }
+        }
+      }
+    }
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.136.0",
+      "libs": {
+        "sap.fe.templates": {}
+      }
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      },
+      "": {
+        "dataSource": "northbreeze",
+        "type": "sap.ui.model.odata.v4.ODataModel",
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "groupId": "$direct",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "routing": {
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "ProductList",
+          "target": "ProductList"
+        },
+        {
+          "pattern": "Products({key}):?query:",
+          "name": "ProductsDetails",
+          "target": "ProductsDetails"
+        }
+      ],
+      "targets": {
+        "ProductList": {
+          "type": "Component",
+          "id": "ProductList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "entitySet": "Products",
+              "liveMode": true,
+              "navigation": {
+                "Products": {
+                  "detail": {
+                    "route": "ProductsDetails"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ProductsDetails": {
+          "type": "Component",
+          "id": "ProductsDetailsList",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "entitySet": "Products"
+            }
+          }
+        }
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  }
+}

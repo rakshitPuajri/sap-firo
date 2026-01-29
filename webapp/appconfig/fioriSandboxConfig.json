@@ -1,0 +1,86 @@
+{
+  "services": {
+    "LaunchPage": {
+      "adapter": {
+        "config": {
+          "groups": [
+            {
+              "id": "supplier",
+              "title": "Material Management",
+              "isPresent": true,
+              "isVisible": true,
+              "isGroupLocked": false,
+              "tiles": [
+                {
+                  "id": "BrowseProducts",
+                  "tileType": "sap.ushell.ui.tile.StaticTile",
+                  "properties": {
+                    "title": "Browse Products",
+                    "targetURL": "#Products-display"
+                  }
+                },
+                {
+                  "id": "BrowseSuppliers",
+                  "tileType": "sap.ushell.ui.tile.StaticTile",
+                  "properties": {
+                    "title": "Browse Suppliers",
+                    "targetURL": "#Suppliers-display"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "NavTargetResolution": {
+      "config": {
+        "enableClientSideTargetResolution": true
+      }
+    },
+    "ClientSideTargetResolution": {
+      "adapter": {
+        "config": {
+          "inbounds": {
+            "BrowseProducts": {
+              "signature": {
+                "parameters": {
+                  "Products.ID": {
+                    "renameTo": "ID"
+                  }
+                },
+                "additionalParameters": "ignored"
+              },
+              "semanticObject": "Products",
+              "action": "display",
+              "title": "Browse Products",
+              "resolutionResult": {
+                "applicationType": "SAPUI5",
+                "additionalInformation": "SAPUI5.Component=NorthWindApp.product",
+                "url": "/product/webapp"
+              }
+            },
+            "BrowseSuppliers": {
+              "signature": {
+                "parameters": {
+                  "Suppliers.ID": {
+                    "renameTo": "ID"
+                  }
+                },
+                "additionalParameters": "ignored"
+              },
+              "semanticObject": "Suppliers",
+              "action": "display",
+              "title": "Browse Suppliers",
+              "resolutionResult": {
+                "applicationType": "SAPUI5",
+                "additionalInformation": "SAPUI5.Component=NorthWindApp.supplier",
+                "url": "/supplier/webapp"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
