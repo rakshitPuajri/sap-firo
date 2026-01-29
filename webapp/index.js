@@ -1,9 +1,13 @@
 sap.ui.define([
-	"sap/ui/core/mvc/XMLView"
-], (XMLView) => {
+	"sap/ui/core/ComponentContainer"
+], (ComponentContainer) => {
 	"use strict";
 
-	XMLView.create({
-		viewName: "ui5app.view.App"
-	}).then((oView) => oView.placeAt("content"));
+	new ComponentContainer({
+		name: "ui5app",
+		settings : {
+			id : "ui5app"
+		},
+		async: true
+	}).placeAt("content");
 });

@@ -1,7 +1,7 @@
 {
   "_version": "1.65.0",
   "sap.app": {
-    "id": "ui5.walkthrough",
+    "id": "ui5app",
     "i18n": "i18n/i18n.properties",
     "title": "{i18n>appTitle}",
     "description": "{{appDescription}}",
@@ -38,7 +38,7 @@
 	  }
 	},
 	"rootView": {
-		"viewName": "uiapp.view.Page",
+		"viewName": "ui5app.view.App",
 		"type": "XML",
 		"id": "app"
 	},	
