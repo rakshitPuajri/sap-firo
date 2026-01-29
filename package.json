@@ -1,7 +1,7 @@
 {
-  "name": "northwind",
+  "name": "ui5app",
   "version": "1.0.0",
-  "description": "NorthWind application",
+  "description": "  profile Demo application",
   "scripts": {
     "start": "ui5 serve -o index.html"
   },
