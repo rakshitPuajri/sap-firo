@@ -1,0 +1,15 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+
+	<Shell>
+		<App>
+			<Page title="Rakshit Pujari">
+				<content>
+					<Text text="My CV 🎉" />
+				</content>
+			</Page>
+
+		</App>
+	</Shell>
+</mvc:View>

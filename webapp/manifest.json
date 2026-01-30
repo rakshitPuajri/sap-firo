@@ -49,6 +49,11 @@
 					"pattern": "InvoiceList",
 					"name": "InvoiceList",
 					"target": "InvoiceList"
+				},
+				{
+					"pattern":"RakshitPujari",
+					"name":"RakshitPujari",
+					"target":"RakshitPujari"
 				}
 			],
 			"targets": {
@@ -62,6 +67,9 @@
 				},
 				"notFound": {
 					"viewName": "NotFound"
+				},
+				"RakshitPujari":{
+					"viewName":"RakshitPujari"
 				}
 			}
 		},
