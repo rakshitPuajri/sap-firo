@@ -1,109 +1,12 @@
 <mvc:View
-    controllerName="ui5app.controller.App"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns:tnt="sap.tnt">
-    <tnt:ToolHeader id="shellLikeToolHeader" class="sapUiTinyMargin">
-        <Button icon="sap-icon://menu2" type="Transparent" tooltip="Menu">
-            <layoutData>
-                <OverflowToolbarLayoutData priority="NeverOverflow" />
-            </layoutData>
-        </Button>
-        <Image src="images/Sap.png" decorative="false"
-            press="onLogoPressed" tooltip="SAP Logo" width="70px" height="50px">
-            <layoutData>
-                <OverflowToolbarLayoutData priority="NeverOverflow" />
-            </layoutData>
-        </Image>
-        <Title text="Demo Project" wrapping="false" id="productName">
-            <layoutData>
-                <OverflowToolbarLayoutData priority="Disappear" />
-            </layoutData>
-        </Title>
-        <Text text="Welcome to my demo project" wrapping="false" id="secondTitle">
-            <layoutData>
-                <OverflowToolbarLayoutData priority="Disappear" />
-            </layoutData>
-        </Text>
-        <ToolbarSpacer />
-        <SearchField width="25rem" id="searchField">
-            <layoutData>
-                <OverflowToolbarLayoutData priority="Low" group="1" />
-            </layoutData>
-        </SearchField>
-        <Button visible="false" icon="sap-icon://search" type="Transparent" id="searchButton"
-            tooltip="Search" />
-        <OverflowToolbarButton icon="sap-icon://da" type="Transparent" tooltip="Joule" text="Joule">
-            <layoutData>
-                <OverflowToolbarLayoutData group="2" />
-            </layoutData>
-        </OverflowToolbarButton>
-        <OverflowToolbarButton icon="sap-icon://source-code" type="Transparent" tooltip="Action 1"
-            text="Action 1">
-            <layoutData>
-                <OverflowToolbarLayoutData group="2" />
-            </layoutData>
-        </OverflowToolbarButton>
-        <OverflowToolbarButton icon="sap-icon://card" type="Transparent" tooltip="Action 2"
-            text="Action 2">
-            <layoutData>
-                <OverflowToolbarLayoutData group="2" />
-            </layoutData>
-        </OverflowToolbarButton>
-        <OverflowToolbarButton icon="sap-icon://action-settings" type="Transparent" text="Settings" />
-        <Button icon="sap-icon://bell" type="Transparent" tooltip="Notification">
-            <layoutData>
-                <OverflowToolbarLayoutData priority="NeverOverflow" />
-            </layoutData>
-        </Button>
-        <tnt:ToolHeaderUtilitySeparator />
-        <OverflowToolbarButton icon="sap-icon://grid" type="Transparent" text="My Products"
-            tooltip="My Products" />
-        <Avatar src="test-resources/sap/tnt/images/Woman_avatar_01.png" displaySize="XS"
-            press=".onAvatarPressed" tooltip="Profile">
-            <layoutData>
-                <OverflowToolbarLayoutData priority="NeverOverflow" />
-            </layoutData>
-        </Avatar>
-    </tnt:ToolHeader>
-    <Shell>
-        <App>
-            <pages>
-                <Page title = "Profile Page">
-                    <content>
-                        <Panel headerText = "Demo Apps Panel" >
-                            <content>
-                                <GenericTile
-                                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
-                                    header="Sales Fulfillment Application Title"
-                                    subheader="Subtitle" press="press">
-                                    <TileContent unit="EUR" footer="Current Quarter">
-                                        <ImageContent src="sap-icon://home-share" />
-                                    </TileContent>
-                                </GenericTile>
-                            </content>
-                        </Panel>
-                    </content>
-                     <content>
-                        <Panel headerText = "Profile Panel" >
-                            <content>
-                                <GenericTile
-                                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
-                                    header="Rakshit Pujari"
-                                    subheader="SAP Consultant" press="onProfile" appShortcut="shortcut"
-                                    systemInfo="systeminfo">
-                                    <TileContent>
-                                        <ImageContent src="images\RakshitImage.png" />
-                                    </TileContent>
-                                </GenericTile>
-                            </content>
-                        </Panel>
-                    </content>
-                </Page>
-            </pages>
-        </App>
-    </Shell>
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true">
 
+	<Shell>
+		<App id="app"
+			 backgroundOpacity="0.3"/>
+	</Shell>
 </mvc:View>
 
   

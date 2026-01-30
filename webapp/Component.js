@@ -9,9 +9,11 @@ sap.ui.define([
          "interfaces": ["sap.ui.core.IAsyncContentCreation"],
           manifest :"json"
       },
-      init() {
+      init : function() {
          // call the init function of the parent
          UIComponent.prototype.init.apply(this, arguments);
+          // this component should automatically initialize the router
+            this.getRouter().initialize();
       }
    });
 });

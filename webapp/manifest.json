@@ -1,54 +1,93 @@
 {
-  "_version": "1.65.0",
-  "sap.app": {
-    "id": "ui5app",
-    "i18n": "i18n/i18n.properties",
-    "title": "{i18n>appTitle}",
-    "description": "{{appDescription}}",
-    "type": "application",
-    "applicationVersion": {
-      "version": "1.0.0"
-  }
-  },
-   "sap.ui": {
-	"technology": "UI5",
-	"deviceTypes": {
-		"desktop": true,
-		"tablet": true,
-		"phone": true
-	}
-  },
-  "sap.ui5": {
-	"dependencies": {
-	  "minUI5Version": "1.108.0",
-	  "libs": {
-		"sap.ui.core": {},
-		"sap.m": {}
-	  }
-    }
-	,    
-	"models": {
-	  "i18n": {
-		"type": "sap.ui.model.resource.ResourceModel",
-		"settings": {
-		  "bundleName": "ui5.walkthrough.i18n.i18n",
-		  "supportedLocales": [""],
-		  "fallbackLocale": ""
+	"_version": "1.65.0",
+	"sap.app": {
+		"id": "ui5app",
+		"i18n": "i18n/i18n.properties",
+		"title": "{i18n>appTitle}",
+		"description": "{{appDescription}}",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
 		}
-	  }
 	},
-	"rootView": {
-		"viewName": "ui5app.view.App",
-		"type": "XML",
-		"id": "app"
-	},	
-	"resources": {
-	  "css": [
-		{
-		  "uri": "css/style.css"
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
 		}
-	  ]
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.108.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"type": "View",
+				"viewType": "XML",
+				"path": "ui5app.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"bypassed": {
+					"target": "notFound"
+				}
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "appHome",
+					"target": "StartPage"
+				},
+				{
+					"pattern": "InvoiceList",
+					"name": "InvoiceList",
+					"target": "InvoiceList"
+				}
+			],
+			"targets": {
+				"StartPage":{
+					"viewName": "StartPage",
+					"viewLevel": 1
+				},
+				"InvoiceList": {
+					"viewName": "InvoiceList",
+					"viewLevel": 2
+				},
+				"notFound": {
+					"viewName": "NotFound"
+				}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "ui5.walkthrough.i18n.i18n",
+					"supportedLocales": [
+						""
+					],
+					"fallbackLocale": ""
+				}
+			}
+		},
+		"rootView": {
+			"viewName": "ui5app.view.App",
+			"viewType": "XML",
+			"id": "app"
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}
 	}
-  }
-
 }
