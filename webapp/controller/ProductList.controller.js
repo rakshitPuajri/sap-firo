@@ -1,27 +1,21 @@
 sap.ui.define([
-   "sap/ui/core/mvc/Controller"
-], function (Controller) {
+   "sap/ui/core/mvc/Controller",
+   "sap/m/MessageToast",
+   "sap/ui/model/json/JSONModel"
+], function (Controller, MessageToast,JSONModel) {
    "use strict";
 
-   return Controller.extend("ui5app.controller.Products", {
+   return Controller.extend("ui5app.controller.ProductList", {
       onInit: function () {
-         this.onRead();
+         console.log('started the prod list controller');
+         
+         var oModel = this.getView().getModel("ProductsModel");
+         console.log(oModel.getData());
       },
-      onRead: function () {
-         let oModel = this.getOwnerComponent().getModel();
-         oModel.read("/Product", {
-            sucess: function (odata) {
-                     console.log(odata);
-               var jModel = new sap.ui.model.json.JSONModel(odata);
-               this.getView().byId("productsTable").setModel(jModel);
-            },
-            error: function (oError) {
-               console.log(oError);
-            }
-         })
+
+      onNavButtonPressed: function () {
+         MessageToast.show('navigate back to start page')
+         this.getOwnerComponent().getRouter().navTo("StartPage")
       }
-
-
-
    });
 });

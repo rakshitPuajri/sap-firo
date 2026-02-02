@@ -1,6 +1,6 @@
 sap.ui.define([
    "sap/ui/core/UIComponent"
-], (UIComponent) => {
+], (UIComponent,JSONModel) => {
    "use strict";
 
    return UIComponent.extend("ui5app.Component", {
@@ -14,6 +14,7 @@ sap.ui.define([
          UIComponent.prototype.init.apply(this, arguments);
           // this component should automatically initialize the router
             this.getRouter().initialize();
+          
       }
    });
 });

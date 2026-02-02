@@ -70,7 +70,43 @@
         <App>
             <Page title="Profile Page">
                 <content>
-                    <Panel headerText="Demo Apps Panel">
+                    <Panel headerText=" Rakshit Pujari CV">
+                        <content>
+                            <GenericTile
+                                class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                                header="Rakshit Pujari"
+                                subheader="SAP Consultant" press="onRakshitProfile"
+                                appShortcut="shortcut"
+                                systemInfo="systeminfo">
+                                <TileContent>
+                                    <ImageContent src="images\RakshitImage.png" />
+                                </TileContent>
+                            </GenericTile>
+                           
+                        </content>
+                         <VBox>
+                                 <GenericTile
+                                header="Linkedin"
+                                subheader="Rakshit Pujari"
+                                mode="LineMode"
+                                press="onRakshitLinkedin"
+                                class=" sapUiSmallMarginBegin sapUiTinyMarginBottom" />
+                            <GenericTile
+                                header="My Blogs"
+                                mode="LineMode"
+                                press ="onBlog"
+                                class="sapUiSmallMarginBegin sapUiTinyMarginBottom" />
+                            <GenericTile
+                                header="GitHub"
+                                mode="LineMode"
+                                press ="ongithub"
+                                class=" sapUiSmallMarginBegin sapUiTinyMarginBottom" />
+                            </VBox>
+                    </Panel>
+                </content>
+                <content>
+                  
+                      <Panel headerText="Demo Apps Panel">
                         <content>
                             <GenericTile
                                 class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
@@ -88,38 +124,6 @@
                                     <ImageContent src="sap-icon://home-share" />
                                 </TileContent>
                             </GenericTile>
-                        </content>
-                    </Panel>
-                </content>
-                <content>
-                    <Panel headerText=" Rakshit Pujari CV">
-                        <content>
-                            <GenericTile
-                                class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
-                                header="Rakshit Pujari"
-                                subheader="SAP Consultant" press="onRakshitProfile"
-                                appShortcut="shortcut"
-                                systemInfo="systeminfo">
-                                <TileContent>
-                                    <ImageContent src="images\RakshitImage.png" />
-                                </TileContent>
-                            </GenericTile>
-                             <GenericTile
-                                header="Linkedin"
-                                subheader="Rakshit Pujari"
-                                mode="LineMode"
-                                press="onRakshitLinkedin"
-                                class="sapUiTinyMarginBegin"/>
-                            <GenericTile
-                                header="My Blogs"
-                                mode="LineMode"
-                                press ="onBlog"
-                                class="sapUiTinyMarginBegin" />
-                            <GenericTile
-                                header="GitHub"
-                                mode="LineMode"
-                                press ="ongithub"
-                                class="sapUiTinyMarginBegin" />
                         </content>
                     </Panel>
                 </content>

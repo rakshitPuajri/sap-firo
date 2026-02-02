@@ -12,8 +12,7 @@ sap.ui.define([
          MessageToast.show('Sales fulfilement app')
       },
       onProductApp: function () {
-         MessageToast.show('pressed on the invoice');
-         console.log(this.getRouter().navTo("ProductList"));
+         MessageToast.show('pressed on the products');
          this.getRouter().navTo("ProductList");
 
       },

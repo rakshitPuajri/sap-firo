@@ -1,0 +1,63 @@
+{
+  "profile": {
+    "name": "Rakshit Pujari",
+    "title": "SAP Technical Consultant",
+    "location": "Germany",
+    "email": "rakshpujari@gmail.com",
+    "contactNumber": "+491635143062",
+    "photo": "images/RakshitImage.png",
+    "summary": "SAP Certified Integration Developer and a SAP Consultant with a master’s in Supply Chain Engineering and 3+ years of S/4HANA experience in SAP CAP (Node.js), ABAP OO, RAP, CDS/VDM, OData services, and Fiori Elements. Experienced in end-to-end development of cloud-native applications on SAP BTP and HANA Cloud, virtual data modeling, and side-by-side extensions for SD-aligned order-to-cash and order-to-invoice processes at BASF and Threerun. Strong background in data analytics and process optimization from prior roles at AXA and Tata Motors, combining technical depth with excellent stakeholder communication, client-facing consulting, and cross-functional collaboration. Proficient in German (C1) and English, with a proven ability to translate complex business requirements into robust, scalable SAP solutions."
+  },
+  "skills": [
+    {
+      "name": "SAP HANA",
+      "rating": 5
+    },
+    {
+      "name": "ABAP OOP & CDS",
+      "rating": 3
+    },
+    {
+      "name": "SAP CAP",
+      "rating": 4
+    },
+    {
+      "name": "UI5",
+      "rating": 3
+    },
+    {
+      "name": "SQL",
+      "rating": 4
+    },
+    {
+      "name": "API Development",
+      "rating": 3
+    }
+  ],
+  "experience": [
+    {
+      "company": "Threerun Consulting",
+      "role": "SAP Technical Consultant",
+      "period": "Oct 2024 - Present",
+      "details": "S/4HANA side by side solution developements with SAP Cloud apllication programming and , Restfull ABAP, CDS views, integrations on BTP"
+    },
+    {
+      "company": "BASF Digital Solutions",
+      "role": "Digitalization Intern",
+      "period": "Sep 2023 - Sep 2024",
+      "details": "CAP NodeJS, UI5 apps, HANA Cloud, analytics"
+    }
+  ],
+  "education": [
+    {
+      "degree": "MBA & Eng & Supply Chain",
+      "college": "Hochschule Hof",
+      "year": "2022 - 2024"
+    },
+    {
+      "degree": "Mechnaical Engineering",
+      "college": "visvesvaya university of Technology",
+      "year": "2013-2018"
+    }
+  ]
+}
