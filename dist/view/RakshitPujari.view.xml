@@ -1,0 +1,99 @@
+<mvc:View
+    controllerName="ui5app.controller.RakshitPujari"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:suite="sap.suite.ui.commons">
+    <Page
+        title="Rakshit Pujari"
+        showNavButton="true"
+        navButtonPress=".onNavButtonPressed"
+        backgroundDesign="Solid"
+        width="100%"
+        justifyContent="Center" class="sapUiTinyMarginBottom">
+        <content>
+            <!-- Profile Picture -->
+
+            <!-- PROFILE -->
+            <Panel>
+                <HBox class="sapUiSmallMargin" justifyContent="Start" alignItems="Center"
+                    width="100%">
+                    <!-- Avatar on the left -->
+                    <Avatar
+                        src="{cv>/profile/photo}"
+                        displaySize="XL"
+                        displayShape="Circle"
+                        class="sapUiSmallMarginEnd" />
+
+                    <!-- VBox with profile details on the right -->
+                    <VBox justifyContent="Center">
+                        <Title text="{cv>/profile/name}" level="H1" />
+                        <Text text="{cv>/profile/title}" />
+                        <Text text="{cv>/profile/location}" />
+                        <Link text="{cv>/profile/contactNumber}"
+                            href="tel:{cv>/profile/contactNumber}" />
+                        <Link text="{cv>/profile/email}" href="mailto:{cv>/profile/email}" />
+
+                    </VBox>
+                </HBox>
+            </Panel>
+
+            <!-- SUMMARY -->
+            <Panel
+                headerText="Profile Summary">
+                <Text text="{cv>/profile/summary}" />
+            </Panel>
+
+            <!-- EXPERIENCE -->
+            <Panel
+                headerText="Experience">
+                <List items="{cv>/experience}">
+                    <ObjectListItem
+                        title="{cv>role}"
+                        number="{cv>company}"
+                        intro="{cv>period}"
+                        icon="sap-icon://work-history">
+                        <attributes>
+                            <ObjectAttribute text="{cv>details}" />
+                        </attributes>
+                    </ObjectListItem>
+                </List>
+            </Panel>
+
+            <!-- SKILLS -->
+            <Panel headerText="Skills" expandable="true"  expanded="false" class="customPanelHeader">
+                <List items="{cv>/skills}">
+                    <CustomListItem>
+                        <HBox class="sapUiSmallMargin">
+                            <!-- Skill name -->
+                            <Text text="{cv>name}" class="sapUiSmallMarginEnd" width="150px" />
+
+                            <!-- Star rating -->
+                            <RatingIndicator
+                                value="{cv>rating}"
+                                maxValue="5"
+                                visualMode="Full"
+                                editable="false"
+                                iconSize="1rem" />
+                        </HBox>
+                    </CustomListItem>
+                </List>
+            </Panel>
+
+
+            <!-- EDUCATION -->
+            <Panel headerText="Education"  expandable="true"  expanded="false" class="customPanelHeader" >
+                <List items="{cv>/education}">
+                    <StandardListItem
+                        title="{cv>degree}"
+                        description="{cv>college} ({cv>year})"
+                        icon="sap-icon://study-leave"
+                        iconDensityAware="false"
+                    />
+                </List>
+            </Panel>
+
+
+        </content>
+    </Page>
+
+</mvc:View>

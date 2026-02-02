@@ -1,0 +1,132 @@
+{
+	"_version": "1.65.0",
+	"sap.app": {
+		"id": "ui5app",
+		"i18n": "i18n/i18n.properties",
+		"title": "{i18n>appTitle}",
+		"description": "{{appDescription}}",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"northbreeze": {
+				"uri": "https://developer-challenge.cfapps.eu10.hana.ondemand.com/odata/v4/northbreeze/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "4.0"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.108.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.table": {},
+				"sap.suite.ui.commons": {}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"type": "View",
+				"viewType": "XML",
+				"path": "ui5app.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"bypassed": {
+					"target": "notFound"
+				}
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "StartPage",
+					"target": "StartPage"
+				},
+				{
+					"pattern": "ProductList",
+					"name": "ProductList",
+					"target": "ProductList"
+				},
+				{
+					"pattern": "RakshitPujari",
+					"name": "RakshitPujari",
+					"target": "RakshitPujari"
+				}
+			],
+			"targets": {
+				"StartPage": {
+					"viewName": "StartPage",
+					"viewLevel": 1
+				},
+				"ProductList": {
+					"viewName": "ProductList",
+					"viewLevel": 2
+				},
+				"notFound": {
+					"viewName": "NotFound"
+				},
+				"RakshitPujari": {
+					"viewName": "RakshitPujari"
+				}
+			}
+		},
+		"models": {
+			"": {
+				"type": "sap.ui.model.odata.v4.ODataModel",
+				"dataSource": "northbreeze",
+				"preload": true,
+				"settings": {
+					"synchronizationMode": "None",
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			},
+			"ProductsModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "/mock/Products.json"
+			},
+			"cv": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/cv.json"
+			},
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "ui5.walkthrough.i18n.i18n",
+					"supportedLocales": [
+						""
+					],
+					"fallbackLocale": ""
+				}
+			}
+		},
+		"rootView": {
+			"viewName": "ui5app.view.App",
+			"viewType": "XML",
+			"id": "app"
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"flexBundle": false
+	}
+}

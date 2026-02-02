@@ -1,0 +1,15 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true">
+
+	<Shell>
+		<App id="app"
+			 backgroundOpacity="0.3"/>
+	</Shell>
+</mvc:View>
+
+  
+
+
+   

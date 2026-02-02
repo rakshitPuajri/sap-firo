@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/m/MessageToast"],function(t,e){" use strict";return t.extend("ui5app.controller.RakshitPujari",{onInit:function(){this.oRakshitProfile=this.byId("timeline")},onNavButtonPressed:function(){e.show("navigate back to start page");this.getOwnerComponent().getRouter().navTo("StartPage")}})});
+//# sourceMappingURL=RakshitPujari.controller.js.map

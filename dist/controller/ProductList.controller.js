@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/m/MessageToast","sap/ui/model/json/JSONModel"],function(t,e,o){"use strict";return t.extend("ui5app.controller.ProductList",{onInit:function(){console.log("started the prod list controller");var t=this.getView().getModel("ProductsModel");console.log(t.getData())},onNavButtonPressed:function(){e.show("navigate back to start page");this.getOwnerComponent().getRouter().navTo("StartPage")}})});
+//# sourceMappingURL=ProductList.controller.js.map

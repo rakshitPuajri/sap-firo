@@ -1,0 +1,40 @@
+<mvc:View
+	controllerName="ui5app.controller.ProductList"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+
+	<Page
+		title="Product list"
+		showNavButton="true"
+		navButtonPress=".onNavButtonPressed"
+		backgroundDesign="Solid">
+
+		<Table
+			id="productsTable"
+			items="{path: '/Products'}">
+			<columns>
+				<Column>
+					<Text text="Product Name" />
+				</Column>
+				<Column>
+					<Text text="Price" />
+				</Column>
+				<Column>
+					<Text text="Stock" />
+				</Column>
+			</columns>
+
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Text text="{ProductsModel>ProductName}" />
+						<Text text="{ProductsModel>UnitPrice}" />
+						<Text text="{ProductsModel>UnitsInStock}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+
+		</Table>
+	</Page>
+
+</mvc:View>
