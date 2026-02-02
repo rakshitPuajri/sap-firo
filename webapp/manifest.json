@@ -8,6 +8,15 @@
 		"type": "application",
 		"applicationVersion": {
 			"version": "1.0.0"
+		},
+		"dataSources": {
+			"northbreeze": {
+				"uri": "https://developer-challenge.cfapps.eu10.hana.ondemand.com/odata/v4/northbreeze/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "4.0"
+				}
+			}
 		}
 	},
 	"sap.ui": {
@@ -23,7 +32,10 @@
 			"minUI5Version": "1.108.0",
 			"libs": {
 				"sap.ui.core": {},
-				"sap.m": {}
+				"sap.m": {},
+				"sap.ui.mdc": {},
+				"sap.fe.core": {},
+				"sap.ui.table": {}
 			}
 		},
 		"routing": {
@@ -46,34 +58,45 @@
 					"target": "StartPage"
 				},
 				{
-					"pattern": "InvoiceList",
-					"name": "InvoiceList",
-					"target": "InvoiceList"
+					"pattern": "ProductList",
+					"name": "ProductList",
+					"target": "ProductList"
 				},
 				{
-					"pattern":"RakshitPujari",
-					"name":"RakshitPujari",
-					"target":"RakshitPujari"
+					"pattern": "RakshitPujari",
+					"name": "RakshitPujari",
+					"target": "RakshitPujari"
 				}
 			],
 			"targets": {
-				"StartPage":{
+				"StartPage": {
 					"viewName": "StartPage",
 					"viewLevel": 1
 				},
-				"InvoiceList": {
-					"viewName": "InvoiceList",
+				"ProductList": {
+					"viewName": "ProductList",
 					"viewLevel": 2
 				},
 				"notFound": {
 					"viewName": "NotFound"
 				},
-				"RakshitPujari":{
-					"viewName":"RakshitPujari"
+				"RakshitPujari": {
+					"viewName": "RakshitPujari"
 				}
 			}
 		},
 		"models": {
+			"": {
+				"type": "sap.ui.model.odata.v4.ODataModel",
+				"dataSource": "northbreeze",
+				"preload": true,
+				"settings": {
+					"synchronizationMode": "None",
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			},
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {

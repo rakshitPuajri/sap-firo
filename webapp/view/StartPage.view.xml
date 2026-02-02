@@ -82,8 +82,8 @@
                             </GenericTile>
                             <GenericTile
                                 class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
-                                header=" Invoices App"
-                                subheader="Subtitle" press="onInovicesApp">
+                                header=" Product App"
+                                subheader="Subtitle" press="onProductApp">
                                 <TileContent unit="EUR" footer="Current Quarter">
                                     <ImageContent src="sap-icon://home-share" />
                                 </TileContent>

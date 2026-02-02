@@ -11,11 +11,10 @@ sap.ui.define([
          // show a native JavaScript alert
          MessageToast.show('Sales fulfilement app')
       },
-      onInovicesApp: function () {
+      onProductApp: function () {
          MessageToast.show('pressed on the invoice');
-         console.log(this.getRouter().navTo("InvoiceList"));
-
-         this.getRouter().navTo("InvoiceList");
+         console.log(this.getRouter().navTo("ProductList"));
+         this.getRouter().navTo("ProductList");
 
       },
       onRakshitProfile: function () {
@@ -33,6 +32,11 @@ sap.ui.define([
             "https://rakshitpujari-blogs.vercel.app/",
             "_blank"
          );
+      },
+      ongithub : function(){
+         window.open("https://github.com/rakshitPuajri",
+            "_blank"
+         )
       },
       getRouter: function () {
          return this.getOwnerComponent().getRouter();

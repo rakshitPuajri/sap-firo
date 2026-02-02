@@ -1,0 +1,32 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+
+	<Table
+		id="productsTable"
+		items="{ path: '/results' }">
+
+		<columns>
+			<Column>
+				<Text text="Product Name" />
+			</Column>
+			<Column>
+				<Text text="Price" />
+			</Column>
+			<Column>
+				<Text text="Stock" />
+			</Column>
+		</columns>
+
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{ProductName}" />
+					<Text text="{UnitPrice}" />
+					<Text text="{UnitsInStock}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+
+	</Table>
+</mvc:View>
