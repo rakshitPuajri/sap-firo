@@ -3,7 +3,7 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:tnt="sap.tnt">
-    <tnt:ToolHeader id="shellLikeToolHeader" class="sapUiTinyMargin">
+    <tnt:ToolHeader id="shellLikeToolHeader" class="sapUiTinyMarginBottom">
         <Button icon="sap-icon://menu2" type="Transparent" tooltip="Menu">
             <layoutData>
                 <OverflowToolbarLayoutData priority="NeverOverflow" />
@@ -68,24 +68,28 @@
     </tnt:ToolHeader>
     <Shell>
         <App>
-            <Page title="Profile Page">
+            <Page title="Home Page">
+                <!-- Profile content -->
                 <content>
-                    <Panel headerText=" Rakshit Pujari CV">
+                    <Panel headerText=" Profile">
                         <content>
                             <GenericTile
                                 class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
                                 header="Rakshit Pujari"
-                                subheader="SAP Consultant" press="onRakshitProfile"
-                                appShortcut="shortcut"
-                                systemInfo="systeminfo">
+                                subheader="SAP Consultant"
+                                press="onRakshitProfile">
                                 <TileContent>
-                                    <ImageContent src="images\RakshitImage.png" />
+                                    <Avatar src="images\RakshitImage.png"
+                                        displaySize="L"
+                                        displayShape="Square"
+                                        class="sapUiSmallMarginEnd" />
+
                                 </TileContent>
                             </GenericTile>
-                           
+
                         </content>
-                         <VBox>
-                                 <GenericTile
+                        <VBox>
+                            <GenericTile
                                 header="Linkedin"
                                 subheader="Rakshit Pujari"
                                 mode="LineMode"
@@ -94,19 +98,20 @@
                             <GenericTile
                                 header="My Blogs"
                                 mode="LineMode"
-                                press ="onBlog"
+                                press="onBlog"
                                 class="sapUiSmallMarginBegin sapUiTinyMarginBottom" />
                             <GenericTile
                                 header="GitHub"
                                 mode="LineMode"
-                                press ="ongithub"
+                                press="ongithub"
                                 class=" sapUiSmallMarginBegin sapUiTinyMarginBottom" />
-                            </VBox>
+                        </VBox>
                     </Panel>
                 </content>
+                <!-- Demo Applications -->
                 <content>
-                  
-                      <Panel headerText="Demo Apps Panel">
+
+                    <Panel headerText="Demo Apps Panel">
                         <content>
                             <GenericTile
                                 class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
