@@ -3,8 +3,13 @@
 }
 
 .sapMPanelHdr {
+color: #0a6ed1;;
   font-weight: 600;
   font-size: 1.1rem;
+}
+.customText .sapMText {
+color: #0a6ed1;
+  
 }
 
 .sapMText {
