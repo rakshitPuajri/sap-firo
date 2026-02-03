@@ -8,15 +8,6 @@
 		"type": "application",
 		"applicationVersion": {
 			"version": "1.0.0"
-		},
-		"dataSources": {
-			"northbreeze": {
-				"uri": "https://developer-challenge.cfapps.eu10.hana.ondemand.com/odata/v4/northbreeze/",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "4.0"
-				}
-			}
 		}
 	},
 	"sap.ui": {
@@ -85,20 +76,9 @@
 			}
 		},
 		"models": {
-			"": {
-				"type": "sap.ui.model.odata.v4.ODataModel",
-				"dataSource": "northbreeze",
-				"preload": true,
-				"settings": {
-					"synchronizationMode": "None",
-					"operationMode": "Server",
-					"autoExpandSelect": true,
-					"earlyRequests": true
-				}
-			},
 			"ProductsModel":{
 				"type":"sap.ui.model.json.JSONModel",
-				"uri":"/mock/Products.json"
+				"uri":"/mockdata/Products.json"
 			},
 			"cv":{
 				"type":"sap.ui.model.json.JSONModel",

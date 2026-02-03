@@ -8,10 +8,22 @@
 		showNavButton="true"
 		navButtonPress=".onNavButtonPressed"
 		backgroundDesign="Solid">
+		<Toolbar>
+			<Title text="Products" level="H2" />
+			<ToolbarSpacer />
 
+			<SearchField
+				width="20rem"
+				liveChange=".onFilterProducts"
+				placeholder="Search by product name" />
+			 <Button
+                icon="sap-icon://filter"
+                press=".onOpenFilterDialog"
+                tooltip="Filter Products" />
+		</Toolbar>
 		<Table
 			id="productsTable"
-			items="{path: '/Products'}">
+			items="{ProductsModel>/}">
 			<columns>
 				<Column>
 					<Text text="Product Name" />
@@ -22,6 +34,9 @@
 				<Column>
 					<Text text="Stock" />
 				</Column>
+				<Column>
+					<Text text="Reorder Level" />
+				</Column>
 			</columns>
 
 			<items>
@@ -30,6 +45,7 @@
 						<Text text="{ProductsModel>ProductName}" />
 						<Text text="{ProductsModel>UnitPrice}" />
 						<Text text="{ProductsModel>UnitsInStock}" />
+						<Text text="{ProductsModel>ReorderLevel}" />
 					</cells>
 				</ColumnListItem>
 			</items>
