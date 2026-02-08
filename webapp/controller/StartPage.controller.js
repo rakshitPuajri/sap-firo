@@ -16,6 +16,9 @@ sap.ui.define([
          this.getRouter().navTo("ProductList");
 
       },
+      onMaterialpp: function(){
+         this.getRouter().navTo("MaterialList")
+      },
       onRakshitProfile: function () {
          MessageToast.show('Welcome to My Profile');
          this.getRouter().navTo("RakshitPujari")

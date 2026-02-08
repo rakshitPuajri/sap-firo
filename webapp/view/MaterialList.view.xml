@@ -1,0 +1,44 @@
+<mvc:View
+	controllerName="ui5app.controller.MaterialList"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+
+	<Page
+		title="Material list"
+		showNavButton="true"
+		navButtonPress=".onNavButtonPressed"
+		backgroundDesign="Solid">
+		<Toolbar>
+			<Title text="Materials" level="H2" />
+			<ToolbarSpacer />
+
+			<SearchField
+				width="20rem"
+				liveChange=".onFilterProducts"
+				placeholder="Search by material name" />
+			 <Button
+                icon="sap-icon://filter"
+                press=".onOpenFilterDialog"
+                tooltip="Filter Materials" />
+		</Toolbar>
+		<Table items="{materialsModel>/materials}">
+    <columns>
+        <Column><Text text="Material Number"/></Column>
+        <Column><Text text="Material Name"/></Column>
+        <Column><Text text="UOM"/></Column>
+    </columns>
+
+    <items>
+        <ColumnListItem>
+            <cells>
+                <Text text="{materialsModel>material_number}" />
+                <Text text="{materialsModel>material_name}" />
+                <Text text="{materialsModel>base_uom}" />
+            </cells>
+        </ColumnListItem>
+    </items>
+</Table>
+
+	</Page>
+
+</mvc:View>

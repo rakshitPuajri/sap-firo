@@ -113,14 +113,14 @@
 
                     <Panel headerText="Demo Apps Panel">
                         <content>
-                            <!-- <GenericTile
+                            <GenericTile
                                 class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
-                                header="Sales Fulfillment Application Title"
-                                subheader="Subtitle" press="press">
-                                <TileContent unit="EUR" footer="Current Quarter">
+                                header="Display Materials"
+                                subheader="Subtitle" press="onMaterialpp">
+                                <TileContent unit="" footer="">
                                     <ImageContent src="sap-icon://home-share" />
                                 </TileContent>
-                            </GenericTile> -->
+                            </GenericTile>
                             <GenericTile
                                 class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
                                 header=" Products App"

@@ -8,6 +8,12 @@
 		"type": "application",
 		"applicationVersion": {
 			"version": "1.0.0"
+		},
+		"dataSources": {
+			"materialsAPI": {
+				"uri": "https://supapp-3htg.onrender.com/api/v1/",
+				"type": "JSON"
+			}
 		}
 	},
 	"sap.ui": {
@@ -53,6 +59,11 @@
 					"target": "ProductList"
 				},
 				{
+					"pattern": "MaterialList",
+					"name": "MaterialList",
+					"target": "MaterialList"
+				},
+				{
 					"pattern": "RakshitPujari",
 					"name": "RakshitPujari",
 					"target": "RakshitPujari"
@@ -72,17 +83,20 @@
 				},
 				"RakshitPujari": {
 					"viewName": "RakshitPujari"
+				},
+				"MaterialList": {
+					"viewName": "MaterialList"
 				}
 			}
 		},
 		"models": {
-			"ProductsModel":{
-				"type":"sap.ui.model.json.JSONModel",
-				"uri":"/mockdata/Products.json"
+			"ProductsModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "/mockdata/Products.json"
 			},
-			"cv":{
-				"type":"sap.ui.model.json.JSONModel",
-				"uri":"model/cv.json"
+			"cv": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/cv.json"
 			},
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
