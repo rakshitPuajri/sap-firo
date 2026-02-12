@@ -85,7 +85,7 @@
                 <List items="{cv>/education}">
                     <StandardListItem
                         title="{cv>degree}"
-                        description="{cv>college} ({cv>year})"
+                        description="{cv>college} {cv>year}"
                         icon="sap-icon://study-leave"
                         iconDensityAware="false"
                     />
