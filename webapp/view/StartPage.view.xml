@@ -59,12 +59,7 @@
         <tnt:ToolHeaderUtilitySeparator />
         <OverflowToolbarButton icon="sap-icon://grid" type="Transparent" text="My Products"
             tooltip="My Products" />
-        <Avatar src="test-resources/sap/tnt/images/Woman_avatar_01.png" displaySize="XS"
-            press=".onAvatarPressed" tooltip="Profile">
-            <layoutData>
-                <OverflowToolbarLayoutData priority="NeverOverflow" />
-            </layoutData>
-        </Avatar>
+        
     </tnt:ToolHeader>
     <Shell>
         <App>

@@ -8,7 +8,8 @@
 		showNavButton="true"
 		navButtonPress=".onNavButtonPressed"
 		backgroundDesign="Solid"
-		 busy="{uiModel>/isLoading}" size="Large" >
+		busy="{uiModel>/isLoading}"
+		busyIndicatorSize="Large">
 		<Toolbar>
 			<Title text="Materials" level="H2" />
 			<ToolbarSpacer />
