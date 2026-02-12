@@ -116,7 +116,7 @@
                             <GenericTile
                                 class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
                                 header="Display Materials"
-                                subheader="Subtitle" press="onMaterialpp">
+                                subheader="Material app retrives the data from PostgressDB via an API call" press="onMaterialpp">
                                 <TileContent unit="" footer="">
                                     <ImageContent src="sap-icon://home-share" />
                                 </TileContent>
