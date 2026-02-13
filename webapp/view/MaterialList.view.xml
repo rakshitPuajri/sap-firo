@@ -28,6 +28,9 @@
         <Column><Text text="Material Number"/></Column>
         <Column><Text text="Material Name"/></Column>
         <Column><Text text="UOM"/></Column>
+		<Column><Text text="Material Type"/></Column>
+		<Column><Text text="Active"/></Column>
+		<Column><Text text="Created On"/></Column>
     </columns>
 
     <items>
@@ -36,6 +39,9 @@
                 <Text text="{materialsModel>material_number}" />
                 <Text text="{materialsModel>material_name}" />
                 <Text text="{materialsModel>base_uom}" />
+                <Text text="{materialsModel>material_type}" />
+                <Text text="{materialsModel>is_active}" />
+				<Text text="{= ${materialsModel>created_at}.substring(0,10) }"/>
             </cells>
         </ColumnListItem>
     </items>
