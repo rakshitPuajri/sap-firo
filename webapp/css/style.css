@@ -28,3 +28,16 @@ color: #0a6ed1;
 	color: #0070F0;
 	font-weight: 500;
 }
+
+.createMaterialContainer {
+	padding: 2rem;
+}
+
+.materialForm {
+	width: 100%;
+}
+
+.buttonContainer {
+	margin-top: 2rem;
+	gap: 1rem;
+}

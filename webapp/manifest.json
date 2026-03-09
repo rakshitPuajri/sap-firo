@@ -72,6 +72,11 @@
 					"pattern": "RakshitPujari",
 					"name": "RakshitPujari",
 					"target": "RakshitPujari"
+				},
+				{
+					"pattern": "CreateMaterial",
+					"name": "CreateMaterial",
+					"target": "CreateMaterial"
 				}
 			],
 			"targets": {
@@ -89,6 +94,10 @@
 				},
 				"MaterialDetail": {
 					"viewName": "MaterialDetail",
+					"viewLevel": 3
+				},
+				"CreateMaterial": {
+					"viewName": "CreateMaterial",
 					"viewLevel": 3
 				},
 				"notFound": {

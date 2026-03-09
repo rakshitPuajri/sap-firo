@@ -47,6 +47,9 @@ sap.ui.define(
                 this.getOwnerComponent().getRouter().navTo("MaterialDetail", {
                     materialNumber: sMaterialNumber
                 });
+            },
+            onCreateMaterial: function(oEvent) {
+                this.getOwnerComponent().getRouter().navTo("CreateMaterial");
             }
         })
     });

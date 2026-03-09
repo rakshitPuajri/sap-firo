@@ -1,0 +1,78 @@
+<mvc:View
+	controllerName="ui5app.controller.CreateMaterial"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+
+	<Page
+		title="Create Material"
+		showNavButton="true"
+		navButtonPress=".onNavButtonPressed"
+		backgroundDesign="Solid">
+
+		<VBox class="createMaterialContainer">
+			<f:SimpleForm
+				editable="true"
+				layout="ResponsiveGridLayout"
+				class="materialForm">
+				<f:content>
+					<Label text="Material Number" required="true" />
+					<Input 
+						id="materialNumber"
+						value="{createModel>/material_number}"
+						placeholder="Enter material number" />
+
+					<Label text="Material Name" required="true" />
+					<Input 
+						id="materialName"
+						value="{createModel>/material_name}"
+						placeholder="Enter material name" />
+
+					<Label text="UOM" required="true" />
+					<ComboBox 
+						id="uom"
+						items="{createModel>/uomList}"
+						selectedKey="{createModel>/base_uom}">
+						<core:Item key="{createModel>uom}" text="{createModel>uom}" />
+					</ComboBox>
+
+					<Label text="Material Type" required="true"/>
+					<ComboBox 
+						id="materialtype"
+						items="{createModel>/materialType_List}"
+						selectedKey="{createModel>/material_type}">
+						<core:Item key="{createModel>materialType}" text="{createModel>materialType}" />
+					</ComboBox>
+
+					<Label text="Description" />
+					<TextArea 
+						id="description"
+						value="{createModel>/description}"
+						placeholder="Enter description"
+						rows="3" />
+
+					<Label text="Active" />
+					<Switch 
+						id="isActive"
+						state="{createModel>/is_active}" />
+				</f:content>
+			</f:SimpleForm>
+
+			<HBox justifyContent="Center" class="buttonContainer">
+				<Button 
+					text="Save"
+					type="Success"
+					press=".onSaveMaterial"
+					width="150px" />
+				<Button 
+					text="Cancel"
+					type="Negative"
+					press=".onCancel"
+					width="150px" />
+			</HBox>
+		</VBox>
+
+	</Page>
+
+</mvc:View>
