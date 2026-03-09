@@ -15,3 +15,16 @@ color: #0a6ed1;
 .sapMText {
   line-height: 1.5;
 }
+.loadingContainer {
+	background: #fafafa;
+}
+
+.loadingIcon {
+	margin-bottom: 1rem;
+}
+
+.loadingText {
+	font-size: 1.1rem;
+	color: #0070F0;
+	font-weight: 500;
+}

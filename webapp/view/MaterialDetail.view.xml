@@ -1,0 +1,58 @@
+<mvc:View
+	controllerName="ui5app.controller.MaterialDetail"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+
+	<Page
+		title="Material Details"
+		showNavButton="true"
+		navButtonPress=".onNavButtonPressed"
+		backgroundDesign="Solid">
+
+		<VBox
+			visible="{uiModel>/isLoading}"
+			alignItems="Center"
+			justifyContent="Center"
+			height="100%"
+			class="loadingContainer">
+			<VBox alignItems="Center">
+				<core:Icon src="sap-icon://hourglass" size="3rem" color="#0070F0" class="loadingIcon" />
+				<Text text="Loading material details..." class="loadingText" />
+			</VBox>
+		</VBox>
+
+		<VBox visible="{= !${uiModel>/isLoading} }" class="detailContainer">
+			<f:SimpleForm
+				editable="false"
+				layout="ResponsiveGridLayout"
+				class="materialForm">
+				<f:content>
+					<Label text="Material Number" />
+					<Text text="{detailModel>/material_number}" />
+
+					<Label text="Material Name" />
+					<Text text="{detailModel>/material_name}" />
+
+					<Label text="UOM" />
+					<Text text="{detailModel>/base_uom}" />
+
+					<Label text="Material Type" />
+					<Text text="{detailModel>/material_type}" />
+
+					<Label text="Active" />
+					<Text text="{detailModel>/is_active}" />
+
+					<Label text="Created On" />
+					<Text text="{= ${detailModel>/created_at}.substring(0,10) }" />
+
+					<Label text="Description" />
+					<Text text="{detailModel>/description}" />
+				</f:content>
+			</f:SimpleForm>
+		</VBox>
+
+	</Page>
+
+</mvc:View>

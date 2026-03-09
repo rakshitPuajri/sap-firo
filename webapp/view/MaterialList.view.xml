@@ -1,51 +1,77 @@
 <mvc:View
 	controllerName="ui5app.controller.MaterialList"
 	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
 	xmlns="sap.m">
 
 	<Page
 		title="Material list"
 		showNavButton="true"
 		navButtonPress=".onNavButtonPressed"
-		backgroundDesign="Solid"
-		busy="{uiModel>/isLoading}"
-		busyIndicatorSize="Large">
-		<Toolbar>
-			<Title text="Materials" level="H2" />
-			<ToolbarSpacer />
+		backgroundDesign="Solid">
 
-			<SearchField
-				width="20rem"
-				liveChange=".onFilterProducts"
-				placeholder="Search by material name" />
-			 <Button
-                icon="sap-icon://filter"
-                press=".onOpenFilterDialog"
-                tooltip="Filter Materials" />
-		</Toolbar>
-		<Table items="{materialsModel>/materials}">
-    <columns>
-        <Column><Text text="Material Number"/></Column>
-        <Column><Text text="Material Name"/></Column>
-        <Column><Text text="UOM"/></Column>
-		<Column><Text text="Material Type"/></Column>
-		<Column><Text text="Active"/></Column>
-		<Column><Text text="Created On"/></Column>
-    </columns>
+		<VBox
+			visible="{uiModel>/isLoading}"
+			alignItems="Center"
+			justifyContent="Center"
+			height="100%"
+			class="loadingContainer">
+			<VBox alignItems="Center">
+				<core:Icon src="sap-icon://hourglass" size="3rem" color="#0070F0" class="loadingIcon" />
+				<Text text="Please wait, data is getting loaded..." class="loadingText" />
+			</VBox>
+		</VBox>
 
-    <items>
-        <ColumnListItem>
-            <cells>
-                <Text text="{materialsModel>material_number}" />
-                <Text text="{materialsModel>material_name}" />
-                <Text text="{materialsModel>base_uom}" />
-                <Text text="{materialsModel>material_type}" />
-                <Text text="{materialsModel>is_active}" />
-				<Text text="{= ${materialsModel>created_at}.substring(0,10) }"/>
-            </cells>
-        </ColumnListItem>
-    </items>
-</Table>
+		<VBox visible="{= !${uiModel>/isLoading} }">
+			<Toolbar>
+				<Title text="Materials" level="H2" />
+				<ToolbarSpacer />
+
+				<SearchField
+					width="20rem"
+					liveChange=".onFilterProducts"
+					placeholder="Search by material name" />
+				<Button
+					icon="sap-icon://filter"
+					press=".onOpenFilterDialog"
+					tooltip="Filter Materials" />
+			</Toolbar>
+			<Table items="{materialsModel>/materials}">
+			<columns>
+				<Column>
+					<Text text="Material Number" />
+				</Column>
+				<Column>
+					<Text text="Material Name" />
+				</Column>
+				<Column>
+					<Text text="UOM" />
+				</Column>
+				<Column>
+					<Text text="Material Type" />
+				</Column>
+				<Column>
+					<Text text="Active" />
+				</Column>
+				<Column>
+					<Text text="Created On" />
+				</Column>
+			</columns>
+
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Link text="{materialsModel>material_number}" press=".onMaterialPress" />
+						<Text text="{materialsModel>material_name}" />
+						<Text text="{materialsModel>base_uom}" />
+						<Text text="{materialsModel>material_type}" />
+						<Text text="{materialsModel>is_active}" />
+						<Text text="{= ${materialsModel>created_at}.substring(0,10) }" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		</VBox>
 
 	</Page>
 

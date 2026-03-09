@@ -64,6 +64,11 @@
 					"target": "MaterialList"
 				},
 				{
+					"pattern": "MaterialDetail/{materialNumber}",
+					"name": "MaterialDetail",
+					"target": "MaterialDetail"
+				},
+				{
 					"pattern": "RakshitPujari",
 					"name": "RakshitPujari",
 					"target": "RakshitPujari"
@@ -78,14 +83,19 @@
 					"viewName": "ProductList",
 					"viewLevel": 2
 				},
+				"MaterialList": {
+					"viewName": "MaterialList",
+					"viewLevel": 2
+				},
+				"MaterialDetail": {
+					"viewName": "MaterialDetail",
+					"viewLevel": 3
+				},
 				"notFound": {
 					"viewName": "NotFound"
 				},
 				"RakshitPujari": {
 					"viewName": "RakshitPujari"
-				},
-				"MaterialList": {
-					"viewName": "MaterialList"
 				}
 			}
 		},
