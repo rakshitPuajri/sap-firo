@@ -26,7 +26,10 @@
 			<Toolbar>
 				<Title text="Materials" level="H2" />
 				<ToolbarSpacer />
-
+				<Button
+				text = "Create Material"
+				press = ".onCreateMaterial"
+				></Button>
 				<SearchField
 					width="20rem"
 					liveChange=".onFilterProducts"
@@ -59,7 +62,9 @@
 			</columns>
 
 			<items>
-				<ColumnListItem>
+				<ColumnListItem 
+						type="Navigation"
+						press=".onMaterialDeatailPress">
 					<cells>
 						<Link text="{materialsModel>material_number}" press=".onMaterialPress" />
 						<Text text="{materialsModel>material_name}" />

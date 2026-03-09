@@ -40,7 +40,7 @@ sap.ui.define(
             onNavButtonPressed: function () {
                 this.getOwnerComponent().getRouter().navTo("StartPage");
             },
-            onMaterialPress: function(oEvent) {
+            onMaterialDeatailPress: function(oEvent) {
                 var oSource = oEvent.getSource();
                 var oContext = oSource.getBindingContext("materialsModel");
                 var sMaterialNumber = oContext.getProperty("material_number");
